@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Schoolerhub Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .logout {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 7px;
+        }
+
+        .welcome {
+            padding: 25px;
+        }
+
+        .welcome h2 {
+            margin-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 18px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .icon {
+            font-size: 38px;
+        }
+
+        .card h3 {
+            margin: 12px 0 5px;
+        }
+
+        .card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>🏫 Schoolerhub</h1>
+
+    <button class="logout" onclick="logout()">
+        Logout
+    </button>
+
+</header>
+
+<section class="welcome">
+
+    <h2>Welcome, Admin 👋</h2>
+
+    <p>School Management Dashboard</p>
+
+</section>
+
+<section class="grid">
+
+    <div class="card" onclick="openPage('students.html')">
+        <div class="icon">👨‍🎓</div>
+        <h3>Students</h3>
+        <p>Manage students</p>
+    </div>
+
+    <div class="card" onclick="openPage('subjects.html')">
+        <div class="icon">📚</div>
+        <h3>Subjects</h3>
+        <p>Manage subjects</p>
+    </div>
+
+    <div class="card" onclick="openPage('marks.html')">
+        <div class="icon">📝</div>
+        <h3>Marks</h3>
+        <p>Manage marks</p>
+    </div>
+
+    <div class="card" onclick="openPage('attendance.html')">
+        <div class="icon">📅</div>
+        <h3>Attendance</h3>
+        <p>Track attendance</p>
+    </div>
+
+    <div class="card" onclick="openPage('results.html')">
+        <div class="icon">🏆</div>
+        <h3>Results</h3>
+        <p>View results</p>
+    </div>
+
+    <div class="card" onclick="openPage('schoolerai.html')">
+        <div class="icon">🤖</div>
+        <h3>SchoolerAI</h3>
+        <p>AI assistant</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Schoolerhub
+</footer>
+
+<script>
+
+function openPage(page) {
+    window.location.href = page;
+}
+
+function logout() {
+    window.location.href = "index.html";
+}
+
+</script>
+
+</body>
+</html>
