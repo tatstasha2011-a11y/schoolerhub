@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,71 +15,78 @@
         body {
             margin: 0;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
             background: #0f172a;
+            font-family: Arial, sans-serif;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #111827;
         }
 
         .login-box {
-            background: white;
             width: 90%;
-            max-width: 400px;
-            padding: 35px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 500px;
+            background: white;
+            padding: 45px 35px;
+            border-radius: 30px;
             text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
-        .logo {
-            font-size: 45px;
+        .school-icon {
+            font-size: 70px;
         }
 
         h1 {
-            margin: 5px 0;
+            margin: 10px 0;
+            font-size: 45px;
+            color: #111827;
         }
 
         .subtitle {
+            font-size: 22px;
             color: #6b7280;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         input {
             width: 100%;
-            padding: 14px;
-            margin: 8px 0;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 15px;
+            font-size: 20px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2563eb;
         }
 
         button {
             width: 100%;
-            padding: 14px;
-            margin-top: 15px;
+            padding: 20px;
             border: none;
-            border-radius: 8px;
+            border-radius: 15px;
             background: #2563eb;
             color: white;
-            font-size: 17px;
+            font-size: 22px;
             cursor: pointer;
         }
 
-        button:hover {
-            background: #1d4ed8;
+        button:active {
+            transform: scale(0.98);
         }
 
         #message {
-            margin-top: 15px;
-            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
         }
 
         .footer {
-            margin-top: 25px;
-            font-size: 13px;
+            margin-top: 35px;
             color: #6b7280;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -87,11 +95,13 @@
 
 <div class="login-box">
 
-    <div class="logo">🏫</div>
+    <div class="school-icon">🏫</div>
 
     <h1>Schoolerhub</h1>
 
-    <p class="subtitle">School Management System</p>
+    <div class="subtitle">
+        School Management System
+    </div>
 
     <form onsubmit="login(event)">
 
@@ -115,7 +125,7 @@
 
     </form>
 
-    <p id="message"></p>
+    <div id="message"></div>
 
     <div class="footer">
         © 2026 Schoolerhub
@@ -129,13 +139,16 @@ function login(event) {
 
     event.preventDefault();
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value
+    const username =
+        document.getElementById("username").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
     if (username === "admin" && password === "admin123") {
 
-    window.location.href = "dashboard.html";
-
-}
+        // Go directly to the dashboard
+        window.location.href = "./dashboard.html";
 
     } else {
 
